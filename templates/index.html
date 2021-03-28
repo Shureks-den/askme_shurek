@@ -1,0 +1,12 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% include "include/navbar.html" %}
+
+{% block content %}
+    <div class ="New Questions"> New Questions </div>
+    {% for question in questions %}
+        {% include "include/question.html" %}
+    {% endfor %}
+    {% include "include/paginator.html" with page=questions %}
+{% endblock content %}
+

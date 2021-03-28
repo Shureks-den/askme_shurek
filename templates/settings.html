@@ -1,0 +1,35 @@
+{% extends "include/base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+
+{% include "include/navbar.html" %}
+
+<!-- Begin page content -->
+{% block content %}
+        <div class= "New Questions">Settings DrRapper </div>
+        <form>
+            <div class="form-row">
+                <label for="login">Login</label>
+                <input type="text" class="form-control" id="login" value="dr_rapper" required>
+            </div>
+            <div class="form-row">
+              <label for="email_validation">Email</label>
+              <input type="text" class="form-control" id="email_validation" value="dr.rapper@mail.ru"  required>
+            </div>
+            <div class="form-row">
+              <label for="password_validation">Password</label>
+              <input type="text" class="form-control" id="password_validation" value="qwerty12345"  required>
+            </div>
+            <div class="form-row">
+                <label for="name_validation">NickName</label>
+                <input type="text" class="form-control" id="name_validation" value="V. Pupkin" required>
+              </div>
+              <img class = "avatar" src="{% static 'img/avatar.png' %}">
+                <div class="form-row">
+                  <label for="avatar_uploader">Profile Picture</label>
+                  <input type="file" class="form-control-file" id="avatar_uploader">
+                </div>
+            <button class="btn btn-success btn-lg" type="submit">Save</button>
+          </form>
+{% endblock content %}

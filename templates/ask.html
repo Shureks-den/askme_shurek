@@ -1,0 +1,26 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% include "include/navbar.html" %}
+
+<!-- Begin page content -->
+{% block content %}
+        <div class= "New Questions">New Question</div>
+        <div class = "no_title">There is no title</div>
+        <div class = "no_tags">At least one tag is required</div>
+        <form>
+            <div class="form-row">
+                <label for="title_validation">Title</label>
+                <input type="text" class="form-control" id="title_validation" placeholder="Question title" required>
+            </div>
+            <div class="form-row">
+                <label for="question_body">Text</label>
+                <textarea class="form-control" id="question_body" rows="6" placeholder="Write more detailes" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="tag_validation">Tags</label>
+                <input type="text" class="form-control" id="tag_validation" placeholder="At least one tag is required" required>
+              </div>
+            <button class="btn btn-primary btn-lg" type="submit">Public question</button>
+          </form>
+{% endblock content %}

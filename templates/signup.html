@@ -1,0 +1,40 @@
+{% extends "include/base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+
+{% include "include/navbar.html" %}
+{% block content %}
+        <div class = "New Questions">Registration </div>
+        <div class = "different_passwords">Passwords doesn't match</div>
+        <div class = "email_taken">Sorry, this email address already registred</div>
+        <form>
+            <div class="form-row">
+                <label for="login">Login</label>
+                <input type="text" class="form-control" id="login" required>
+            </div>
+            <div class="form-row">
+                <label for="email_validation">Email</label>
+                <input type="email" class="form-control" id="email_validation" required>
+            </div>
+            <div class="form-row">
+                <label for="name_validation">NickName</label>
+                <input type="text" class="form-control" id="name_validation" required>
+              </div>
+            <div class="form-row">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password"  required>
+            </div>
+            <div class="form-row">
+                <label for="password">Repeat password</label>
+                <input type="password" class="form-control" id="password"  required>
+            </div>
+                <div class="form-row">
+                  <label for="avatar_uploader">Upload Profile Picture</label>
+                  <input type="file" class="form-control-file" id="avatar_uploader">
+                </div>
+            <button class="btn btn-success btn-lg" type="submit">Register</button>
+          </form>
+{% endblock content %}
+
+

@@ -1,0 +1,14 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% include "include/navbar.html" %}
+
+{% block content %}
+{% include "include/question.html" %}
+          <div class = "answer block">
+              {% for answer in answers %}
+                {% include "include/answer.html" %}
+              {% endfor %}
+          </div>
+{% include "include/paginator.html" with page=answers %}
+{% endblock content %}
