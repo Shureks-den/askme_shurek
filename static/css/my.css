@@ -1,6 +1,6 @@
 .flex-shrink-0 > .container {
   padding: 80px 15px 0;
-  
+
 }
 .not_log_login_page {
   display: inline;
@@ -53,6 +53,13 @@ form > .avatar {
   max-width: 2500px;
   margin-right: 5%;
 }
+
+.Hot.Questions{
+  font-size: 3em;
+  color: red;
+  margin-bottom: 30px;
+}
+
 .New.Questions{
   font-size: 3em;
   color: midnightblue;
@@ -101,10 +108,6 @@ form > .avatar {
 .Tag_search{
   font-size: 3em;
   color:mediumslateblue;
-}
-.New.Questions > .hot.Questions {
-  margin-left: 30px;
-  font-size: 0.5em;
 }
 .under.question {
   margin-top: 50px;
@@ -238,7 +241,7 @@ form > .avatar {
   list-style-type: none;
 }
 .member_tags .tag {
-  font-size: 2.0em; 
+  font-size: 2.0em;
   color: grey;
   text-decoration: none;
 }
