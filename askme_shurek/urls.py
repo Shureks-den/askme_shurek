@@ -26,5 +26,6 @@ urlpatterns = [
     path('settings/', views.settings, name='settings'),
     path('ask/', views.ask, name='ask'),
     path('question/<int:pk>/', views.one_question, name='one_question'),
+    path('tag/', views.tag_search, name='tag_search'),
     path('', views.index, name='new_questions'),
 ]

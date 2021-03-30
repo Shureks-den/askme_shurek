@@ -15,8 +15,8 @@
         <div class = "under question">
             <a class = "answers" href={% url 'one_question' pk=question.id %}>Answers (3)</a>
             <span class = "tags">Tags:</span>
-            <a href = "tag_search.html">Help me</a>
-            <a href = "#">This is hard</a>
+            <a href = {% url 'tag_search' %}?q=Help+me> Help me</a>
+            <a href = {% url 'tag_search' %}?q=This+is+hard>This is hard</a>
         </div>
     </div>
 </div>

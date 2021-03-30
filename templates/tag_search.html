@@ -3,9 +3,8 @@
 {% include "include/navbar.html" %}
 
 {% block content %}
-  <div class= "Tag_search"> <span>Tag:</span> <span class = "find_tag">Help me</span> </div>
-  {% for question in questions %}
-    {% include "include/question.html" %}
-  {% endfor %}
-  {% include "include/paginator.html" %}
+  <div class= "Tag_search"> <span>Tag: {{ tag }}</span>  </div>
+    {% for question in questions %}
+        {% include "include/question.html" %}
+    {% endfor %}
 {% endblock content %}

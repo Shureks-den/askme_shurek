@@ -33,80 +33,6 @@
     <div class="row">
       <div class="col-8">
         {% block content %}
-          <div class ="row question">
-              <div class = "col-2">
-                  <div><img src="{% static 'img/some200.jpg' %}"></div>
-                  <div>
-                  <button type="button" class="btn btn-outline-danger">&#128077;</button>
-                  <span class="rating"> Likes:5</span>
-                  <button type="button" class="btn btn-outline-warning">&#128078;</button>
-                </div>
-              </div>
-              <div class = "col-10">
-                <a class = "question link" href="question.html">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
-                  <div class = "text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos aspernatur, atque at
-                    veritatis labore nisi deserunt suscipit, reprehenderit placeat doloribus neque sequi illo
-                    aperiam reiciendis quod autem explicabo. Cum, ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolores impedit laboriosam veritatis temporibus non delectus quibusdam vel. Harum cum mollitia obcaecati? Inventore aut quasi cum voluptates nam magni in laborum.
-                  </div>
-                  <div class = "under question">
-                    <span class = "answers">Answers (3)</span>
-                    <span class = "tags">Tags:</span>
-                    <a href = "tag_search.html">Help me</a>
-                    <a href = "#">This is hard</a>
-                  </div>
-                </div>
-
-          </div>
-          <div class ="row question">
-            <div class = "col-2">
-                <img src="{% static 'img/some200.jpg' %}">
-                <div>
-                  <button type="button" class="btn btn-outline-danger">&#128077;</button>
-                  <span class="rating"> Likes:5</span>
-                  <button type="button" class="btn btn-outline-warning">&#128078;</button>
-                </div>
-            </div>
-            <div class = "col-10">
-              <a class = "question link" href="question.html">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
-                <div class = "text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos aspernatur, atque at
-                  veritatis labore nisi deserunt suscipit, reprehenderit placeat doloribus neque sequi illo
-                  aperiam reiciendis quod autem explicabo. Cum, ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolores impedit laboriosam veritatis temporibus non delectus quibusdam vel. Harum cum mollitia obcaecati? Inventore aut quasi cum voluptates nam magni in laborum.
-                </div>
-                <div class = "under question">
-                  <span class = "answers">Answers (3)</span>
-                  <span class = "tags">Tags:</span>
-                  <a href = "tag_search.html">Help me</a>
-                  <a href = "#">This is hard</a>
-                </div>
-              </div>
-
-        </div>
-          <div class ="row question">
-          <div class = "col-2">
-              <img src="{% static 'img/some200.jpg' %}">
-              <div>
-                <button type="button" class="btn btn-outline-danger">&#128077;</button>
-                <span class="rating"> Likes:5</span>
-                <button type="button" class="btn btn-outline-warning">&#128078;</button>
-              </div>
-          </div>
-          <div class = "col-10">
-            <a class = "question link" href="question.html">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</a>
-              <div class = "text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos aspernatur, atque at
-                veritatis labore nisi deserunt suscipit, reprehenderit placeat doloribus neque sequi illo
-                aperiam reiciendis quod autem explicabo. Cum, ullam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolores impedit laboriosam veritatis temporibus non delectus quibusdam vel. Harum cum mollitia obcaecati? Inventore aut quasi cum voluptates nam magni in laborum.
-              </div>
-              <div class = "under question">
-                <span class = "answers">Answers (3)</span>
-                <span class = "tags">Tags:</span>
-                <a href = "tag_search.html">Help me</a>
-                <a href = "#">This is hard</a>
-              </div>
-            </div>
-      </div>
         {% endblock content %}
       </div>
       <div class="col-4">
@@ -114,33 +40,33 @@
         <div class = "popular_tags">Popular Tags</div>
 
         <span class = "topic_tags">
-          <a class = "topic_tag1 topic_tag" href="#"> Help me </a>
-          <a class = "topic_tag2 topic_tag" href="#"> Rainbow </a>
-          <a class = "topic_tag3 topic_tag" href="#"> Python </a>
-          <a class = "topic_tag4 topic_tag" href="#"> MySQL </a>
-          <a class = "topic_tag5 topic_tag" href="#"> TechnoPark </a>
-          <a class = "topic_tag6 topic_tag" href="#"> Tag6 </a>
-          <a class = "topic_tag7 topic_tag" href="#"> Tag7 </a>
-          <a class = "topic_tag8 topic_tag" href="#"> Tag8 </a>
+          <a class = "topic_tag1 topic_tag" href={% url 'tag_search' %}?q=Help+me> Help me </a>
+          <a class = "topic_tag2 topic_tag" href={% url 'tag_search' %}?q=Rainbow> Rainbow </a>
+          <a class = "topic_tag3 topic_tag" href={% url 'tag_search' %}?q=Python> Python </a>
+          <a class = "topic_tag4 topic_tag" href={% url 'tag_search' %}?q=MySQL> MySQL </a>
+          <a class = "topic_tag5 topic_tag" href={% url 'tag_search' %}?q=TechnoPark> TechnoPark </a>
+          <a class = "topic_tag6 topic_tag" href={% url 'tag_search' %}?q=Tag6 > Tag6 </a>
+          <a class = "topic_tag7 topic_tag" href={% url 'tag_search' %}?q=Tag7> Tag7 </a>
+          <a class = "topic_tag8 topic_tag" href={% url 'tag_search' %}?q=Tag8> Tag8 </a>
         </span>
+
         <div class="members"> Best Members</div>
         <ul class = "member_tags">
           <li>
-            <a class="tag"> Someone1 </a>
+            <span class="tag"> Someone1 </span>
           </li>
           <li>
-            <a class="tag"> Someone2 </a>
+            <span class="tag"> Someone2 </span>
           </li>
           <li>
-            <a class="tag"> Someone3 </a>
+            <span class="tag"> Someone3 </span>
           </li>
           <li>
-            <a class="tag"> Someone4 </a>
+            <span class="tag"> Someone4 </span>
           </li>
           <li>
-            <a class="tag"> Someone5 </a>
+            <span class="tag"> Someone5 </span>
           </li>
-
         </ul>
         {% endblock side %}
       </div>

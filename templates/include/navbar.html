@@ -20,9 +20,9 @@
             <a class = "log_out" href = {% url "login" %}>log out</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">ASK!</button>
+        <form class="d-flex" action= {% url 'tag_search' %} method="get">
+          <input name="q" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">SEARCH!</button>
         </form>
       </div>
     </div>

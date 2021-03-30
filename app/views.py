@@ -6,17 +6,26 @@ questions = [
         'title': 'title' + str(i),
         'id': i,
         'text': 'text' + str(i),
-        'tag': 'helpme'
+        'tag': 'Help me'
     } for i in range(10)
 ]
 
 answers = [
     {
         'id': i,
-        'text': 'you should do' + str(i+1),
-        'tag': 'helpme'
+        'text': 'you should do' + str(i + 1),
     } for i in range(10)
 ]
+
+
+def tag_search(request):
+    tag = request.GET.get('q')
+    object_list = []
+    for question in questions:
+        if question['tag'] == tag:
+            object_list.append(question)
+    return render(request, 'tag_search.html', {'questions': object_list, 'tag': tag})
+
 
 def index(request):
     paginator = Paginator(questions, 3)
@@ -54,4 +63,3 @@ def one_question(request, pk):
     page = request.GET.get('page')
     pag_ans = paginator.get_page(page)
     return render(request, 'question.html', {"question": question, 'page': page, 'answers': pag_ans})
-
