@@ -40,14 +40,14 @@
         <div class = "popular_tags">Popular Tags</div>
 
         <span class = "topic_tags">
-          <a class = "topic_tag1 topic_tag" href={% url 'tag_search' %}?q=Help+me> Help me </a>
-          <a class = "topic_tag2 topic_tag" href={% url 'tag_search' %}?q=Rainbow> Rainbow </a>
-          <a class = "topic_tag3 topic_tag" href={% url 'tag_search' %}?q=Python> Python </a>
-          <a class = "topic_tag4 topic_tag" href={% url 'tag_search' %}?q=MySQL> MySQL </a>
-          <a class = "topic_tag5 topic_tag" href={% url 'tag_search' %}?q=TechnoPark> TechnoPark </a>
-          <a class = "topic_tag6 topic_tag" href={% url 'tag_search' %}?q=Tag6 > Tag6 </a>
-          <a class = "topic_tag7 topic_tag" href={% url 'tag_search' %}?q=Tag7> Tag7 </a>
-          <a class = "topic_tag8 topic_tag" href={% url 'tag_search' %}?q=Tag8> Tag8 </a>
+          <a class = "topic_tag1 topic_tag" href={% url 'tag_search' tag='Helpme' %}> Help me </a>
+          <a class = "topic_tag2 topic_tag" href={% url 'tag_search' tag='Rainbow' %}> Rainbow </a>
+          <a class = "topic_tag3 topic_tag" href={% url 'tag_search' tag='Python' %}> Python </a>
+          <a class = "topic_tag4 topic_tag" href={% url 'tag_search' tag='MySQL' %}> MySQL </a>
+          <a class = "topic_tag5 topic_tag" href={% url 'tag_search' tag='TechnoPark' %}> TechnoPark </a>
+          <a class = "topic_tag6 topic_tag" href={% url 'tag_search' tag='Tag6' %}> Tag6 </a>
+          <a class = "topic_tag7 topic_tag" href={% url 'tag_search' tag='Tag7' %}> Tag7 </a>
+          <a class = "topic_tag8 topic_tag" href={% url 'tag_search' tag='Tag8' %}> Tag8 </a>
         </span>
 
         <div class="members"> Best Members</div>

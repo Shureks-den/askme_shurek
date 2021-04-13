@@ -6,4 +6,5 @@
     {% for question in questions %}
         {% include "include/question.html" %}
     {% endfor %}
+{% include "include/paginator.html" with page=questions %}
 {% endblock content %}

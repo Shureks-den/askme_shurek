@@ -6,7 +6,7 @@ questions = [
         'title': 'title' + str(i),
         'id': i,
         'text': 'text' + str(i),
-        'tag': 'Help me'
+        'tag': 'Helpme'
     } for i in range(10)
 ]
 
@@ -18,27 +18,33 @@ answers = [
 ]
 
 
-def tag_search(request):
-    tag = request.GET.get('q')
+def tag_search(request, tag):
     object_list = []
     for question in questions:
-        if question['tag'] == tag:
+        if question['tag'] == str(tag):
             object_list.append(question)
-    return render(request, 'tag_search.html', {'questions': object_list, 'tag': tag})
+    val = paginate(object_list, 3, request)
+    return render(request, 'tag_search.html', {'page': val[0], 'questions': val[1], 'tag': tag})
+
+
+def paginate(data, num, request):
+    val = []
+    paginator = Paginator(data, num)
+    page = request.GET.get('page')
+    pag_questions = paginator.get_page(page)
+    val.append(page)
+    val.append(pag_questions)
+    return val
 
 
 def index(request):
-    paginator = Paginator(questions, 3)
-    page = request.GET.get('page')
-    pag_questions = paginator.get_page(page)
-    return render(request, 'index.html', {'page': page, 'questions': pag_questions})
+    val = paginate(questions, 3, request)
+    return render(request, 'index.html', {'page': val[0], 'questions': val[1]})
 
 
 def hot_questions(request):
-    paginator = Paginator(questions, 4)
-    page = request.GET.get('page')
-    pag_questions = paginator.get_page(page)
-    return render(request, 'hot_questions.html', {'page': page, 'questions': pag_questions})
+    val = paginate(questions, 4, request)
+    return render(request, 'hot_questions.html', {'page': val[0], 'questions': val[1]})
 
 
 def login(request):
@@ -59,7 +65,5 @@ def ask(request):
 
 def one_question(request, pk):
     question = questions[pk]
-    paginator = Paginator(answers, 3)
-    page = request.GET.get('page')
-    pag_ans = paginator.get_page(page)
-    return render(request, 'question.html', {"question": question, 'page': page, 'answers': pag_ans})
+    val = paginate(answers, 3, request)
+    return render(request, 'question.html', {"question": question, 'page': val[0], 'answers': val[1]})
