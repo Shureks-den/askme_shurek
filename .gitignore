@@ -1,5 +1,7 @@
 venv/
+node_modules/bootstrap
 node_modules/
+public/
 .idea/
 .vscode/
 *.pyc

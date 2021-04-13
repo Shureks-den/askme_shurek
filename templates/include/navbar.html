@@ -9,7 +9,7 @@
             <a class="nav-link active" aria-current="page" href= {% url "login" %}>Login</a>
           </li>
           <li class="not_log">
-            <a class="nav-link" href={% url "signup" %}">Register</a>
+            <a class="nav-link" href={% url 'signup' %}>Register</a>
           </li>
           <li class = "logged">
             <img class = "avatar" src="{% static 'img/avatar.png' %}">
@@ -20,8 +20,11 @@
             <a class = "log_out" href = {% url "login" %}>log out</a>
           </li>
         </ul>
+        <form class = "ask_button" action= {% url 'ask' %}>
+          <button class="btn btn-outline-primary" type="submit">ASK!</button>
+        </form>
         <form class="d-flex" action= {% url 'tag_search' %} method="get">
-          <input name="q" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+          <input name="q" class="form-control me-2" type="text" placeholder="Search Question" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">SEARCH!</button>
         </form>
       </div>

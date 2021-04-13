@@ -1,14 +1,17 @@
 {% extends "include/base.html" %}
 {% load static %}
 
-{% include "include/navbar.html" %}
-
 {% block content %}
 {% include "include/question.html" %}
-          <div class = "answer block">
-              {% for answer in answers %}
-                {% include "include/answer.html" %}
-              {% endfor %}
-          </div>
+    <div class = "answer block">
+        {% for answer in answers %}
+            {% include "include/answer.html" %}
+        {% endfor %}
+    </div>
 {% include "include/paginator.html" with page=answers %}
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">Enter your answer here!</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+</div>
 {% endblock content %}

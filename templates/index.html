@@ -1,9 +1,9 @@
 {% extends "include/base.html" %}
 {% load static %}
-{% include "include/navbar.html" %}
 
 {% block content %}
-    <div class ="New Questions"> New Questions </div>
+    <span class ="New Questions"> New Questions </span>
+    <a href= {% url 'hot' %}> Hot questions </a>
     {% for question in questions %}
         {% include "include/question.html" %}
     {% endfor %}
