@@ -28,13 +28,10 @@ def tag_search(request, tag):
 
 
 def paginate(data, num, request):
-    val = []
     paginator = Paginator(data, num)
     page = request.GET.get('page')
     pag_questions = paginator.get_page(page)
-    val.append(page)
-    val.append(pag_questions)
-    return val
+    return page, pag_questions
 
 
 def index(request):
