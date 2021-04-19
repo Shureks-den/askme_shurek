@@ -56,6 +56,13 @@ form > .avatar {
   margin-right: 5%;
 }
 
+.login {
+    color:green;
+    font-size: 1.5em;
+    margin-top: 5px;
+    margin-bottom 5px;
+}
+
 .Hot.Questions{
   font-size: 3em;
   color: red;

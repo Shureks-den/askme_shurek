@@ -19,7 +19,7 @@ def paginate(data, num, request):
 
 def index(request):
     questions = models.Question.objects.new_questions()
-    val = paginate(questions, 3, request)
+    val = paginate(questions, 4, request)
     return render(request, 'index.html', {'page': val[0], 'questions': val[1]})
 
 

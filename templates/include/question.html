@@ -1,7 +1,7 @@
 {% load static %}
 <div class ="row question">
     <div class = "col-2">
-        {{ question.author.nickname }}
+        <div class = "login"> {{ question.author.nickname }} </div>
         <div> <img class = "question_avatar"  src={{ question.author.avatar.url }}  > </div>
         <div>
             <button type="button" class="btn btn-outline-danger">&#128077;</button>
@@ -14,7 +14,7 @@
             {{ question.title}}</a>
         <div class = "text"> {{ question.text }} </div>
         <div class = "under question">
-            <a class = "answers" href={% url 'one_question' pk=question.id %}>Answers {{ question.count }} </a>
+            <a class = "answers" href={% url 'one_question' pk=question.id %}>Answers  </a>
             <span class = "tags">Tags:</span>
             {% for tag in question.tags  %}
             <a href = {% url 'tag_search' tag=tag %}> {{ tag }}</a>

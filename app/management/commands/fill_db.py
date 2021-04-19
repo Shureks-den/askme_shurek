@@ -74,12 +74,12 @@ class Command(BaseCommand):
         #Tag.objects.bulk_update(tags, update_fields['question'])
 
     def create_votes(self):
-        questions = Question.objects.filter(pk__lte=100)
+        questions = Question.objects.filter(pk__lte=10001)
         users = Profile.objects.all()
-        answers = Answer.objects.filter(pk__lte=100)
+        answers = Answer.objects.filter(pk__lte=10001)
         i = 0
         votesCount = 0
-        while (votesCount < 200):
+        while (votesCount < 1000000):
             user = users[i]
             votes = []
             for question in questions:
@@ -92,7 +92,7 @@ class Command(BaseCommand):
                 votes.append(Like(author=user, votes=like, content_object=answer))
                 votesCount += 1
                 answer.rating += like
-
+            print(i)
             Like.objects.bulk_create(votes)
             i += 1
         for question in questions:
