@@ -1,29 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
-
-questions = [
-    {
-        'title': 'title' + str(i),
-        'id': i,
-        'text': 'text' + str(i),
-        'tag': 'Helpme'
-    } for i in range(10)
-]
-
-answers = [
-    {
-        'id': i,
-        'text': 'you should do' + str(i + 1),
-    } for i in range(10)
-]
+from app import models
 
 
 def tag_search(request, tag):
-    object_list = []
-    for question in questions:
-        if question['tag'] == str(tag):
-            object_list.append(question)
-    val = paginate(object_list, 3, request)
+    tag = get_object_or_404(models.Tag.objects, tag=tag)
+    questions = tag.questions()
+    val = paginate(questions, 3, request)
     return render(request, 'tag_search.html', {'page': val[0], 'questions': val[1], 'tag': tag})
 
 
@@ -35,11 +18,13 @@ def paginate(data, num, request):
 
 
 def index(request):
+    questions = models.Question.objects.new_questions()
     val = paginate(questions, 3, request)
     return render(request, 'index.html', {'page': val[0], 'questions': val[1]})
 
 
 def hot_questions(request):
+    questions = models.Question.objects.hot_questions()
     val = paginate(questions, 4, request)
     return render(request, 'hot_questions.html', {'page': val[0], 'questions': val[1]})
 
@@ -61,6 +46,7 @@ def ask(request):
 
 
 def one_question(request, pk):
-    question = questions[pk]
+    question = get_object_or_404(models.Question.objects, pk=pk)
+    answers = question.answers()
     val = paginate(answers, 3, request)
     return render(request, 'question.html', {"question": question, 'page': val[0], 'answers': val[1]})

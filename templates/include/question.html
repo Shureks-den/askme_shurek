@@ -1,10 +1,11 @@
 {% load static %}
 <div class ="row question">
     <div class = "col-2">
-        <div><img class = "question_avatar" src="{% static 'img/some200.jpg' %}"></div>
+        {{ question.author.nickname }}
+        <div> <img class = "question_avatar"  src={{ question.author.avatar.url }}  > </div>
         <div>
             <button type="button" class="btn btn-outline-danger">&#128077;</button>
-            <span class="rating"> Likes:5</span>
+            <span class="rating"> Likes: {{ question.rating }} </span>
             <button type="button" class="btn btn-outline-warning">&#128078;</button>
         </div>
     </div>
@@ -13,10 +14,11 @@
             {{ question.title}}</a>
         <div class = "text"> {{ question.text }} </div>
         <div class = "under question">
-            <a class = "answers" href={% url 'one_question' pk=question.id %}>Answers (3)</a>
+            <a class = "answers" href={% url 'one_question' pk=question.id %}>Answers {{ question.count }} </a>
             <span class = "tags">Tags:</span>
-            <a href = {% url 'tag_search' tag=question.tag %}> Help me</a>
-            <a href = {% url 'tag_search' tag=question.tag %}> This is hard</a>
+            {% for tag in question.tags  %}
+            <a href = {% url 'tag_search' tag=tag %}> {{ tag }}</a>
+            {% endfor %}
         </div>
     </div>
 </div>
