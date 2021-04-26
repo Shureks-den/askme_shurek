@@ -39,33 +39,36 @@
         {% block side %}
         <div class = "popular_tags">Popular Tags</div>
 
+
         <span class = "topic_tags">
-          <a class = "topic_tag1 topic_tag" href={% url 'tag_search' tag='Helpme' %}> Help me </a>
-          <a class = "topic_tag2 topic_tag" href={% url 'tag_search' tag='Rainbow' %}> Rainbow </a>
-          <a class = "topic_tag3 topic_tag" href={% url 'tag_search' tag='Python' %}> Python </a>
-          <a class = "topic_tag4 topic_tag" href={% url 'tag_search' tag='MySQL' %}> MySQL </a>
-          <a class = "topic_tag5 topic_tag" href={% url 'tag_search' tag='TechnoPark' %}> TechnoPark </a>
-          <a class = "topic_tag6 topic_tag" href={% url 'tag_search' tag='Tag6' %}> Tag6 </a>
-          <a class = "topic_tag7 topic_tag" href={% url 'tag_search' tag='Tag7' %}> Tag7 </a>
-          <a class = "topic_tag8 topic_tag" href={% url 'tag_search' tag='Tag8' %}> Tag8 </a>
+          <a class = "topic_tag1 topic_tag" href={% url 'tag_search' tag=tags.0 %}> {{ tags.0 }} </a>
+          <a class = "topic_tag2 topic_tag" href={% url 'tag_search' tag=tags.1 %}> {{ tags.1 }} </a>
+          <a class = "topic_tag3 topic_tag" href={% url 'tag_search' tag=tags.2 %}> {{ tags.2 }} </a>
+          <a class = "topic_tag4 topic_tag" href={% url 'tag_search' tag=tags.3 %}> {{ tags.3 }} </a>
+          <a class = "topic_tag5 topic_tag" href={% url 'tag_search' tag=tags.4 %}> {{ tags.4 }} </a>
+          <a class = "topic_tag6 topic_tag" href={% url 'tag_search' tag=tags.5 %}> {{ tags.5 }} </a>
+          <a class = "topic_tag7 topic_tag" href={% url 'tag_search' tag=tags.6 %}> {{ tags.6 }} </a>
+          <a class = "topic_tag8 topic_tag" href={% url 'tag_search' tag=tags.7 %}> {{ tags.7 }} </a>
         </span>
+
+
 
         <div class="members"> Best Members</div>
         <ul class = "member_tags">
           <li>
-            <span class="tag"> Someone1 </span>
+            <span class="tag">{{ profiles.0 }} </span>
           </li>
           <li>
-            <span class="tag"> Someone2 </span>
+            <span class="tag">{{ profiles.1 }} </span>
           </li>
           <li>
-            <span class="tag"> Someone3 </span>
+            <span class="tag">{{ profiles.2 }} </span>
           </li>
           <li>
-            <span class="tag"> Someone4 </span>
+            <span class="tag">{{ profiles.3 }} </span>
           </li>
           <li>
-            <span class="tag"> Someone5 </span>
+            <span class="tag">{{ profiles.4 }} </span>
           </li>
         </ul>
         {% endblock side %}

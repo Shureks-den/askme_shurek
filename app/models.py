@@ -46,7 +46,7 @@ class Answer(models.Model):
     text = models.TextField(verbose_name='Text')
     correct = models.BooleanField(verbose_name='Correct')
     question = models.ForeignKey('Question', on_delete=models.CASCADE)
-    date_published = models.DateTimeField(verbose_name='Date published')
+    date_published = models.DateTimeField(verbose_name='Date published', auto_now_add=True)
     author = models.ForeignKey('Profile', on_delete=models.CASCADE)
     votes = GenericRelation('Like', related_query_name='answers')
     rating = models.IntegerField(default=0, verbose_name='Rating')

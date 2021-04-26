@@ -58,9 +58,10 @@ form > .avatar {
 
 .login {
     color:green;
-    font-size: 1.5em;
+    font-size: 1em;
     margin-top: 5px;
     margin-bottom 5px;
+    margin-right: 5px;
 }
 
 .Hot.Questions{
@@ -123,9 +124,9 @@ form > .avatar {
   margin-bottom: 10px;
 }
 .rating {
-  font-size: 1.0em;
+  font-size: 0.8em;
   color: #860049;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .under.question > .answers{
   text-decoration: none;
@@ -255,15 +256,16 @@ form > .avatar {
   text-decoration: none;
 }
 .tag{
-  padding-left: 50px;
+  padding-left: 10px;
 }
 
 .popular_tags{
   margin-bottom: 15;
+  font-size: 2em;
 }
 
 .topic_tags > .topic_tag {
-  font-size: 2em;
+  font-size: 1.5em;
   color:indigo;
   text-decoration: none;
 }
@@ -271,45 +273,45 @@ form > .avatar {
 .topic_tag1.topic_tag {
   margin-right: 20px;
   color:blue;
-  font-size: 2.3em;
+  font-size: 1.5em;
 }
 
 .topic_tag2.topic_tag {
   color:darkkhaki;
-  font-size: 2.3em;
+  font-size: 1.5em;
 }
 
 .topic_tag3.topic_tag {
   margin-left: 15px;
   color:darkturquoise;
-  font-size: 2.3em;
+  font-size: 1.5em;
 }
 
 .topic_tag4.topic_tag {
   margin-right: 30px;
   color:darkgreen;
-  font-size: 3.5em;
+  font-size: 1.5em;
 }
 
 .topic_tag5.topic_tag {
   margin-right: 20px;
   color: coral;
-  font-size: 2.6em;
+  font-size: 1.5em;
 }
 
 .topic_tag6.topic_tag {
   margin-right: 10px;
   color:dodgerblue;
-  font-size: 2.2em;
+  font-size: 1.5em;
 }
 .topic_tag7.topic_tag {
   color:magenta;
-  font-size: 2.3em;
+  font-size: 1.5em;
 }
 .topic_tag8.topic_tag {
   margin-left: 17px;
   color:midnightblue;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 
